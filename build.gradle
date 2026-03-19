@@ -1,0 +1,31 @@
+plugins {
+    id 'application'
+}
+
+group = 'local.jvision'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def tomcatVersion = '11.0.18'
+
+dependencies {
+    implementation "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+application {
+    mainClass = 'local.jvision.DevServer'
+}
+
+tasks.named('run', JavaExec) {
+    standardInput = System.in
+    ['port', 'contextPath'].each { key ->
+        def value = System.getProperty(key)
+        if (value != null) {
+            systemProperty key, value
+        }
+    }
+}
