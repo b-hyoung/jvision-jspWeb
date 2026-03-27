@@ -10,3 +10,11 @@
     <%@ include file="include02_footer.jsp" %>
 </body>
 </html>
+
+n = int(input("N값 입력"))
+sum=10
+
+for i in range(n):
+    sum+= i;
+
+print(sum)

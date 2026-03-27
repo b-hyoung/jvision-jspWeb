@@ -30,6 +30,9 @@
         <div class="col-md-12">
             <div class="h-100 p-5">
                 <h3><%= tagline %></h3>
+                response.setIntHeader("Refresh", "5;url=books.jsp");
+                Date day=new java.util.Date();
+                String am_pm
             </div>
         </div>
     </div>
