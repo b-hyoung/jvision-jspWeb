@@ -22,6 +22,7 @@ public class BookRepository {
         book1.setCategory("IT모바일");
         book1.setUnitsInStock(1000);
         book1.setReleaseDate("2022/10/06");
+        book1.setFilename("https://picsum.photos/seed/csharp/250/350");
 
         Book book2 = new Book("ISBN1235","자바마스터",30000);
         book2.setAuthor("송미영");
@@ -30,6 +31,7 @@ public class BookRepository {
         book2.setCategory("IT모바일");
         book2.setUnitsInStock(1000);
         book2.setReleaseDate("2023/01/01");
+        book2.setFilename("https://picsum.photos/seed/java/250/350");
 
         Book book3 = new Book("ISBN1236","파이썬 프로그래밍",30000);
         book3.setAuthor("최성철");
@@ -38,10 +40,21 @@ public class BookRepository {
         book3.setCategory("IT모바일");
         book3.setUnitsInStock(1000);
         book3.setReleaseDate("2023/01/01");
+        book3.setFilename("https://picsum.photos/seed/python/250/350");
+
+        Book book4 = new Book("ISBN1237","피지컬AI 컴퓨팅 센서편",32000);
+        book4.setAuthor("강석진, 박경민, 신승호");
+        book4.setDescription("라즈베리파이와 파이썬으로 풍성한 센서 제어 및 스마트 프로젝트를 배웁니다. AIoT 초심자부터 전문가까지 무조건 따라하기 방식으로 최신 라즈베리파이 OS 환경 구축부터 센서 제어, 액추에이터, 환경제어, 프로젝트까지 학습할 수 있습니다.");
+        book4.setPublisher("GoldenBell");
+        book4.setCategory("IT모바일");
+        book4.setUnitsInStock(500);
+        book4.setReleaseDate("2026/01/01");
+        book4.setFilename("https://picsum.photos/seed/physicalai/250/350");
 
         listOfBooks.add(book1);
         listOfBooks.add(book2);
         listOfBooks.add(book3);
+        listOfBooks.add(book4);
     }
     public ArrayList<Book> getAllBooks(){
         return listOfBooks;

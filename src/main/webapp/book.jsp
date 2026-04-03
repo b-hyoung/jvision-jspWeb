@@ -6,7 +6,7 @@
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-
+        <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
         <title>도서 정보</title>
     </head>
     <body>
@@ -27,7 +27,11 @@
             %>
             
             <div class="row align-items-md-stretch">
-                <div class="col-md-12">
+                <div class="col-md-5">
+                    <img src="<%= book.getFilename().startsWith("http") ? book.getFilename() : "./resources/images/" + book.getFilename() %>" class="card-img-top" alt="<%= book.getName() %>" style="width: 70%;"/>
+
+                </div>
+                <div class="col-md-6">
                         <h3><b><%= book.getName() %></b></h3>
                         <p><%= book.getDescription() %></p>
                         <p><b> 도서코드 :<span class="badge text-bg-danger">  <%= book.getBookId()%></span></p>
@@ -38,7 +42,7 @@
                         <p><b>재고수</b><%= book.getUnitsInStock() %></p>
                         <h4><%= book.getUnitPrice() %>원</h4>
                         <p><a href="#" class="btn btn-info">도서주문 &raquo;</a></p>
-                        <a href="./book.jsp" class="btn btn-secondary">도서 목록 &raquo;</a>
+                        <a href="./books.jsp" class="btn btn-secondary">도서 목록 &raquo;</a>
                 </div>
             </div>
             <%@ include file="ch03/include02_footer.jsp" %>

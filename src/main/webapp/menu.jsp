@@ -3,7 +3,8 @@
     <div class="container">
         <a class="navbar-brand" href="/BookMark/">BookMark</a>
         <div class="navbar-nav">
-            <a class="nav-link" href="/BookMark/book.jsp">도서 목록</a>
+            <a class="nav-link" href="/BookMark/books.jsp">도서 목록</a>
+            <a class="nav-link" href="/BookMark/addBook.jsp">도서 등록</a>
         </div>
     </div>
 </nav>

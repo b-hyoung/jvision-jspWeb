@@ -14,6 +14,7 @@ def tomcatVersion = '11.0.18'
 dependencies {
     implementation "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
     implementation "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 application {

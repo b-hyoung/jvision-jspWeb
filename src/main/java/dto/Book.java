@@ -12,6 +12,7 @@ public class Book implements Serializable {
     private long unitInStock;
     private String releasData;
     private String condition;
+    private String filename;
 
     public Book(){
         super();
@@ -53,5 +54,9 @@ public class Book implements Serializable {
 
     public String getCondition() { return condition; }
     public void setCondition(String condition) { this.condition = condition; }
+
+
+    public String getFilename() { return filename; }
+    public void setFilename(String filename) { this.filename = filename; }
 
 }

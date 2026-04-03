@@ -5,12 +5,13 @@
 <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />
 <html>
 <head>
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>도서 목록</title>
 </head>
 <body>
     <div class="container py-4">
-        <%@ include file="ch03/include02_header.jsp" %>
+        <%@ include file="menu.jsp" %>
 
         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
@@ -30,12 +31,13 @@
             %>
             <div class="col-md-4">
                 <div class="h-100 p-2">
+                    <img src="<%= book.getFilename().startsWith("http") ? book.getFilename() : "./resources/images/" + book.getFilename() %>" class="card-img-top" alt="<%= book.getName() %>" style="width: 250px; height: 350px; object-fit: cover;">
                     <h5><b><%= book.getName() %></b></h5>
                     <h2><%= book.getAuthor() %></h2>
                     <p><%= book.getPublisher() %> | <%= book.getReleaseDate() %></p>
                     <p><%= book.getDescription().substring(0,60) %>...</p>
                     <p><%= book.getUnitPrice() %>원</p>
-                    <p><a href="book_detail.jsp?bookId=<%= book.getBookId() %>" class="btn btn-secondary" role="button">상세 정보</a></p>
+                    <p><a href="book.jsp?id=<%= book.getBookId() %>" class="btn btn-secondary" role="button">상세 정보</a></p>
                 </div>
             </div>
             <%
