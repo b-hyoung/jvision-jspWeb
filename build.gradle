@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
-def tomcatVersion = '11.0.18'
+def tomcatVersion = '9.0.102'
 
 dependencies {
     implementation "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
